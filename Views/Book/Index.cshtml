@@ -1,0 +1,32 @@
+@model IEnumerable<Boekenbibliotheek.Models.Book>
+
+<h1>Boeken</h1>
+
+<a asp-action="Create">Voeg een nieuw boek toe</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Titel</th>
+            <th>Auteur</th>
+            <th>Publicatiejaar</th>
+            <th>Acties</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@book.ISBN</td>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.PublicationYear</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@book.Id">Bewerken</a> |
+                <a asp-action="Delete" asp-route-id="@book.Id">Verwijderen</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

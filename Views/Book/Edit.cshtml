@@ -1,0 +1,32 @@
+@model Boekenbibliotheek.Models.Book
+
+<h1>Bewerk boek</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label>ISBN</label>
+        <input asp-for="ISBN" />
+    </div>
+    <div>
+        <label>Titel</label>
+        <input asp-for="Title" />
+    </div>
+    <div>
+        <label>Auteur</label>
+        <input asp-for="Author" />
+    </div>
+    <div>
+        <label>Publicatiejaar</label>
+        <input asp-for="PublicationYear" type="number" />
+    </div>
+    <div>
+        <label>Beschrijving</label>
+        <textarea asp-for="Description"></textarea>
+    </div>
+    <div>
+        <label>Aantal beschikbare exemplaren</label>
+        <input asp-for="AvailableCopies" type="number" />
+    </div>
+    <button type="submit">Opslaan</button>
+</form>
